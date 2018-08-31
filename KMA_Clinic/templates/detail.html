@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% block content %}
+	<div class="col-sm-6 col-sm-offset-3"><br>
+	<p>
+	<a href="{% url 'home' %}" class="btn btn-primary" role="button">Home Page</a>
+	<a href="{% url 'edit' id=instance.id %}" class="btn btn-primary" role="button">Edit</a>
+	</p><br>
+		<span>AGE : </span> <i>{{ instance.age_ }}</i>
+		<h4><p><strong>Patient ID:</strong> {{instance.id}}</p>
+		<p><strong>Name:</strong> {{instance.name}}</p>
+		<p><strong>Address:</strong> {{instance.address}}</p>
+		<p><strong>Birth Date:</strong> {{instance.birthdate}}</p>
+		<p><strong>Age:</strong> {{instance.age_}}</p>
+		<p><strong>Phone:</strong> {{instance.phone}}</p>
+		<p><strong>Husband:</strong> {{instance.husband}}</p></h4>
+	</div>
+{% endblock %}		

@@ -1,0 +1,84 @@
+{% extends 'index.html' %}
+{% block content %}
+	<div class="col-sm-6 col-sm-offset-3"><br>				
+		<p><a href="{% url 'insert' %}" class="btn btn-primary" role="button">New Patient</a> 
+		<a href="{% url 'visits' %}" class="btn btn-primary" role="button">Visits</a>
+	    </p>
+	    
+
+	</div>
+
+	{% for obj in query %}
+		<div class="container">
+		       <table class="table table-striped">
+		          <tbody>
+		             <tr>
+		                <td colspan="1">
+		                   <form class="well form-horizontal">
+		                      <fieldset>
+		                      	<p><strong>ID :</strong> {{obj.id}}</p><br>
+		                      	<p>Name: {{obj.name}}</p><br>		
+		                      	<p>Address: {{obj.address}}</p><br>		
+		                      	<p>Birth Date: {{obj.birthdate}}</p><br>		
+		                      	<p>Age: {{instance.age_}}</p><br><br>		
+		                      	<p>Phone: {{obj.phone}}</p><br><br>		
+		                      	<p>Husband: {{obj.husband}}</p><br>		
+
+		                         <div class="form-group">
+		                            <label class="col-md-4 control-label">ID :</label>
+		                            <div class="col-md-8 inputGroupContainer">
+		                               <div class="input-group"><span><i></i></span><input id="fullName" name="fullName" placeholder="Full Name" class="form-control" required="true" value="{{obj.id}}" type="text" disabled></div>
+		                            </div>
+		                         </div>
+		                         <div class="form-group">
+		                            <label class="col-md-4 control-label">Full Name</label>
+		                            <div class="col-md-8 inputGroupContainer">
+		                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="fullName" name="fullName" placeholder="Full Name" class="form-control" required="true" value="{{obj.name}}" type="text" disabled></div>
+		                            </div>
+		                         </div>
+		                         <div class="form-group">
+		                            <label class="col-md-4 control-label">Address Line 1</label>
+		                            <div class="col-md-8 inputGroupContainer">
+		                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine1" name="addressLine1" placeholder="Address Line 1" class="form-control" required="true" value="{{obj.address}}" type="text" disabled></div>
+		                            </div>
+		                         </div>
+		                         <div class="form-group">
+		                            <label class="col-md-4 control-label">Birth Date</label>
+		                            <div class="col-md-8 inputGroupContainer">
+		                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-clock"></i></span><input id="email" name="email" placeholder="Birth Date" class="form-control" required="true" value="{{obj.birthdate}}" type="text" disabled></div>
+		                            </div>
+		                         </div>
+		                         <div class="form-group">
+		                            <label class="col-md-4 control-label">Age</label>
+		                            <div class="col-md-8 inputGroupContainer">
+		                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span><input id="email" name="email" placeholder="Email" class="form-control" required="true" value="{{obj.age}}" type="text" disabled></div>
+		                            </div>
+		                         </div>
+		                         <div class="form-group">
+		                            <label class="col-md-4 control-label">Phone Number</label>
+		                            <div class="col-md-8 inputGroupContainer">
+		                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span><input id="phoneNumber" name="phoneNumber" placeholder="Phone Number" class="form-control" required="true" value="{{obj.phone}}" type="text" disabled>
+		                               </div>
+		                            </div>
+		                         </div>
+		                         <div class="form-group">
+		                            <label class="col-md-4 control-label">Husband</label>
+		                            <div class="col-md-8 inputGroupContainer">
+		                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span><input id="phoneNumber" name="phoneNumber" placeholder="Husband Name" class="form-control" required="true" value="{{obj.husband}}" type="text" disabled>
+		                               </div>
+		                            </div>
+		                         </div>
+		                      </fieldset>
+		                      <a href="{% url 'edit' id=obj.id %}" class="btn btn-primary" role="button">Edit</a>
+		                      
+		                   </form>
+		                </td> 
+		             </tr>
+		          </tbody>
+		       </table>
+		    </div>
+		  
+	{% endfor %}
+
+
+{% endblock %}

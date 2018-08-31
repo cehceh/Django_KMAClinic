@@ -1,0 +1,68 @@
+{% extends 'index.html' %}
+{% block title %} {{page_title}} {% endblock %}
+{% load crispy_forms_tags %}
+{% block content %} 
+	<div class="col-sm-6 col-sm-offset-3"><br>
+		
+		<!--<p><strong>{{error_name}}</strong></p>
+
+    		<span>AGE :</span> <i>{{ instance.age_ }}</i>-->
+
+		{% if instance.id != id %}
+			<p><strong>{{var}}</strong></p>
+			<input type="text" name="" value="{{instance.id}}" disabled=""><br>
+		{% endif %}
+		<form method="post" action="" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form|crispy }}
+		{{form.age.instance.age_}}
+		<!--<a href="{% url 'insert' %}" class="btn btn-primary" role="button">{{btn}}</a>
+		<a href="{% url 'home' %}" class="btn btn-primary" role="button">Refresh</a>-->
+	<!--{{instance.id}}
+		{{instance.name}}
+		{{instance.address}}
+		{{instance.birthdate}}
+		{{instance.age}}
+		{{instance.phone}}
+		{{instance.husband}}-->
+			<input type="submit" class="btn btn-default" value="{{ btn }}" name="">
+			<a href="{% url 'home' %}" class="btn btn-primary" role="button"
+			 >Home Page</a>
+
+		<!--<input type="submit" value="{{ btn_del }}" name="">
+				<div class="row">
+			<div class="col-md-12">
+				<div class="thumbnail"><br>
+					<div class="input-group">
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1">@</span>
+							<input type="text" class="form-control" placeholder="Patient Name" aria-describedby="basic-addon1"  value="{{instance.name}}">
+						</div><br>
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1">@</span>
+							<input type="text" class="form-control" value="{{instance.address}}" placeholder="Patient Name" aria-describedby="basic-addon1">
+						</div><br>
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1">@</span>
+							<input type="text" class="form-control" value="{{instance.birthdate}}" placeholder="Patient Name" aria-describedby="basic-addon1">
+						</div><br>
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1">@</span>
+							<input type="text" class="form-control"  placeholder="Patient Name" aria-describedby="basic-addon1" value="{{instance.age}}">
+						</div><br>
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1">@</span>
+							<input type="text" class="form-control" value="{{instance.phone}}" placeholder="Patient Name" aria-describedby="basic-addon1">
+						</div><br>
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1">@</span>
+							<input type="text" class="form-control" value="{{instance.husband}}" placeholder="Patient Name" aria-describedby="basic-addon1">
+						</div><br>
+					</div>
+				</div>
+			</div>
+		</div>-->
+
+		</form>
+	</div>
+{% endblock %}

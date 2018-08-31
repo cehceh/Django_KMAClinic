@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+{% block content %}
+	<div class="col-sm-6 col-sm-offset-3"><br>
+	<p>
+	<a href="{% url 'home' %}" class="btn btn-primary" role="button">Home Page</a>
+	<a href="{% url 'visits_edit' id=instance.id %}" class="btn btn-primary" role="button">Edit</a>
+	</p>
+
+		<h5><p>Visit ID: {{instance.id}}</p>
+			<p>Patient ID: {{instance.patient_id_id}}</p>
+			<p>Preset History1: {{instance.present_hist1}}</p>
+			<p>Preset History2: {{instance.present_hist2}}</p>
+			<p>Present History3: {{instance.present_hist3}}</p>
+			<p>Past History1: {{instance.past_hist1}}</p>
+			<p>Past History2: {{instance.past_hist2}}</p>
+			<p>Past History3: {{instance.past_hist3}}</p></h5>
+	</div>
+{% endblock %}
