@@ -34,7 +34,7 @@ def patient_age(request,age): #Home Page
 		'btn_save':'Save',
 	}
 
-	return render(request, 'list.html', context)
+	return render(request, 'detail.html', context)
 
 # For Patient Screen
 def detail(request,id):
@@ -100,7 +100,7 @@ def update_form(request,id):
 			instance = form.save(commit=False)
 			instance.save()
 			messages.success(request, 'Update Process Done for Patient ID : '  + str(instance.id))
-			return HttpResponseRedirect(instance.goto_home())#, render()
+			return HttpResponseRedirect(instance.pass_age())#, render()
 	except Exception as e:
 		messages.success(request, 'We Can\'t Update, Name Already Exists')
 	

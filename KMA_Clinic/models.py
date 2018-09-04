@@ -32,7 +32,7 @@ class KMA(models.Model):
 		return reverse('detail_id', kwargs={'id':self.id})
 
 	def pass_age(self):
-		return reverse("edit", kwargs={'age':self.age})
+		return reverse("pass_age", kwargs={'age':self.age})
 
 	# def age(self):
 	# 	import datetime 	
