@@ -69,17 +69,22 @@ def save_form(request):
 	# cal_age = age_()
 	#if request.method == 'POST':
 		#age= request.POST.get('age')
-	try:
+	# try:
 		#cal_age = form.cleaned_data['age']
-		if form.is_valid():
-			instance = form.save(commit=False)
-			instance.save()
-			messages.success(request, 'Save Process Done for Patient ID : ' + str(instance.id))
-			cal_age = form.cleaned_data('age')
-			return HttpResponseRedirect(instance.get_url())
-	except Exception as e:
+	if form.is_valid():
+		instance = form.save()
+		instance.save()
+		messages.success(request, 'Save Process Done for Patient ID : ' + str(instance.id))
+		# cal_age = form.cleaned_data('age')
+		return HttpResponseRedirect('/kma/')
+			# return HttpResponseRedirect(instance.get_url())
+	else:
+		form = PostForm()    		
 		messages.success(request, 'We Can\'t Save, Name Already Exists')
-
+		
+	# except Exception as e:
+	# 	messages.success(request, 'We Can\'t Save, Name Already Exists')
+			
 	context = {
 		'views_title':'Insert Data',
 		'page_title': 'New Patient',
@@ -163,7 +168,7 @@ def age_(self):
 	#query = KMA.objects.get()
 	dob = self.birthdate
 	tod = datetime.date.today()
-	my_age = (tod.year - dob.year) - int((tod.month, tod.day) < (dob.month, dob.day))
+	my_age = (tod.year - dob.year) - float((tod.month, tod.day) < (dob.month, dob.day))
 	return my_age
 
 	#django.utils.timezone.now()

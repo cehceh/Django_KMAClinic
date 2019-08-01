@@ -15,7 +15,7 @@ from django.urls import reverse
 class KMA(models.Model):
 	name      = models.CharField(max_length=100)
 	address   = models.CharField(blank= True, max_length=200)
-	birthdate = models.DateField('Birth Date')
+	birthdate = models.DateField('Birth Date', null=True)
 	age       = models.CharField(blank= True, max_length=100)
 	phone     = models.IntegerField(blank= True, default=0)
 	husband   = models.CharField(blank= True, max_length=100)
@@ -37,13 +37,13 @@ class KMA(models.Model):
 	# def age(self):
 	# 	import datetime 	
 	# 	return int((datetime.date.now() - self.birthdate).days / 365.25)
-	@property
-	def age_(self):
-		import datetime
-		dob = self.birthdate
-		tod = datetime.date.today()
-		my_age = (tod.year - dob.year) - int((tod.month, tod.day) < (dob.month, dob.day))
-		return my_age
+	# @property
+	# def age_(self):
+	# 	import datetime
+	# 	dob = self.birthdate
+	# 	tod = datetime.date.today()
+	# 	my_age = (tod.year - dob.year) - float((tod.month, tod.day) < (dob.month, dob.day))
+	# 	return my_age
 
 	#age_cal = property(age_)
 

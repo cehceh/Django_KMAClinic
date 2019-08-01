@@ -1,0 +1,144 @@
+/* for signup.html */
+
+#form1 {
+    /* background-color: lightpink; */
+    height: 100px;
+    width: 800px;
+    /* text-align: center; */
+    padding: 20px;
+    margin: 20px
+}
+
+
+/* for forms.html */
+
+
+/* #expandform {
+    background-color: white;
+} */
+
+#form2 {
+    background-color: white;
+    height: 200px;
+    width: 300px;
+    /* text-align: center; */
+    padding: 10px;
+    margin: 20px
+}
+
+
+/* #f2 {
+    background-color: white;
+    height: 200px;
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    margin: 20px
+} */
+
+#signup,
+#index-cl,
+#rec,
+#mycrm {
+    color: white;
+    padding: 10px;
+    margin: 20px
+}
+
+#chbx {
+    background-color: white;
+    color: blueviolet;
+    padding: 3px;
+    margin: 3px
+}
+
+#company,
+#manager,
+#repname,
+#lastv,
+#notes {
+    color: blueviolet
+}
+
+
+/* for savedone.html */
+
+#save {
+    background-color: white;
+    color: blueviolet;
+    text-align: center;
+    width: 100;
+    height: 100
+}
+
+
+/* #clear {
+    background: url("/static/crm/img/crm1.jpeg") 100% no-repeat;
+} */
+
+
+/* for index */
+
+#divfooter {
+    background-color: #324960;
+    padding: 5px;
+    border-top: 1px solid grey;
+}
+
+#fodev {
+    /* margin-bottom: 5; */
+    text-align: center;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#all {
+    text-align: center;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#btn-signup,
+#btn2 {
+    background: blueviolet;
+    color: white
+}
+
+#btn-edit-id {
+    background-color: teal;
+    /* #324960; */
+}
+
+#tbody-id {
+    background-color: lightcyan;
+    /* #4FC3A1; */
+}
+
+.disabled-rec {
+    pointer-events: none;
+    cursor: default;
+    padding: 10px;
+    margin: 20px;
+    color: #ccc
+}
+
+
+/* for clients.html */
+
+#div-f-cl {
+    padding: 5px;
+    margin: 10px;
+    /* margin-bottom: auto */
+}
+
+
+/* for table.html */
+
+#btn-cl,
+#btn-rec {
+    padding: 10px;
+    margin: 5px;
+    background-color: #324960;
+}

@@ -1,30 +1,27 @@
-{% extends 'index.html' %}
-{% block content %}
-	<div class="col-sm-6 col-sm-offset-3"><br>				
-		<p><a href="{% url 'insert' %}" class="btn btn-primary" role="button">New Patient</a> 
-		<a href="{% url 'visits' %}" class="btn btn-primary" role="button">Visits</a>
-	    </p>
-	    
+{% extends 'index.html' %} {% load static %} {% block content %}
+<div class="col-sm-6 col-sm-offset-3"><br>
+    <p><a href="{% url 'insert' %}" class="btn btn-primary" role="button">New Patient</a>
+        <a href="{% url 'visits' %}" class="btn btn-primary" role="button">New Visits</a>
+    </p>
+</div>
 
-	</div>
+{% for obj in query %}
+<div class="container">
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <td colspan="1">
+                    <form class="well form-horizontal">
+                        <fieldset>
+                            <p><strong>ID :</strong> {{obj.id}}</p><br>
+                            <p><strong>Name :</strong> {{obj.name}}</p><br>
+                            <p><strong>Address :</strong> {{obj.address}}</p><br>
+                            <p><strong>Birth Date :</strong> {{obj.birthdate}}</p><br>
+                            <p><strong>Age :</strong> {{instance.age_}}</p><br><br>
+                            <p><strong>Phone :</strong> {{obj.phone}}</p><br><br>
+                            <p><strong>Husband :</strong> {{obj.husband}}</p><br>
 
-	{% for obj in query %}
-		<div class="container">
-		       <table class="table table-striped">
-		          <tbody>
-		             <tr>
-		                <td colspan="1">
-		                   <form class="well form-horizontal">
-		                      <fieldset>
-		                      	<p><strong>ID :</strong> {{obj.id}}</p><br>
-		                      	<p><strong>Name :</strong> {{obj.name}}</p><br>		
-		                      	<p><strong>Address :</strong> {{obj.address}}</p><br>	
-		                      	<p><strong>Birth Date :</strong> {{obj.birthdate}}</p><br>
-		                      	<p><strong>Age :</strong> {{instance.age_}}</p><br><br>	
-		                      	<p><strong>Phone :</strong> {{obj.phone}}</p><br><br>	
-		                      	<p><strong>Husband :</strong> {{obj.husband}}</p><br>		
-
-		                         <!--<div class="form-group">
+                            <!--<div class="form-group">
 		                            <label class="col-md-4 control-label">ID :</label>
 		                            <div class="col-md-8 inputGroupContainer">
 		                               <div class="input-group"><span><i></i></span><input id="fullName" name="fullName" placeholder="Full Name" class="form-control" required="true" value="{{obj.id}}" type="text" disabled></div>
@@ -68,17 +65,21 @@
 		                               </div>
 		                            </div>
 		                         </div>-->
-		                      </fieldset>
-		                      <a href="{% url 'edit' id=obj.id %}" class="btn btn-primary" role="button">Edit</a>
-		                      
-		                   </form>
-		                </td> 
-		             </tr>
-		          </tbody>
-		       </table>
-		    </div>
-		  
-	{% endfor %}
+                        </fieldset>
+                        <a href="{% url 'edit' id=obj.id %}" class="btn btn-primary" role="button">Edit</a>
 
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endfor %}
+
+<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
 
 {% endblock %}

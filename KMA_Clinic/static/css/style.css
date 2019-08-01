@@ -1,4 +1,10 @@
+div {
+    color: blueviolet
+}
 
-div{
-	color: #aee;
+#form1 {
+    height: 400px;
+    width: 400px;
+    padding: 5px;
+    margin: 5px
 }
